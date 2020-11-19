@@ -20,7 +20,7 @@ future==0.17.1
 GridDataFormats==0.5.0
 gsd==1.9.0
 hyperopt==0.1.2
--e git+https://github.com/FLAPS-NMI/Hyppopy.git@99a65ed47e1d48f470236b040682e469e2692852#egg=hyppopy
+-e git+https://github.com/FLAPS-NMI/Hyppopy.git@dc808c5bf99dab47070c772eb6fcd061362b062b#egg=hyppopy
 idna==2.8
 imagesize==1.1.0
 importlib-metadata==0.18
