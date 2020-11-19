@@ -8,44 +8,45 @@
 
 ## What is Hyppopy?
 
-Hyppopy is a python toolbox for blackbox optimization. It's purpose is to offer a unified and easy to use interface to a collection of solver libraries. Currently provided solvers are:
+Hyppopy is a python toolbox for blackbox optimization. It offers a unified and easy-to-use interface to a collection of solver libraries. Currently provided solvers are:
 
 * [Hyperopt](http://hyperopt.github.io/hyperopt/)
 * [Optunity](https://optunity.readthedocs.io/en/latest/user/index.html)
 * [Optuna](https://optuna.org/)
-* Quasi-Randomsearch Solver
-* Randomsearch Solver
-* Gridsearch Solver
+* quasi-random search solver
+* random-search solver
+* grid-search solver
 
 [See a solver analysis here: https://github.com/MIC-DKFZ/Hyppopy/blob/master/examples/solver_comparison/HyppopyReport.pdf]
 
 ## Installation
 
-1. clone the [Hyppopy](http:\\github.com) project from Github
-2. (create a virtual environment), open a console (with your activated virtual env) and go to the hyppopy root folder
+1. Clone the [Hyppopy](http:\\github.com) project from Github.
+2. (Create a virtual environment), open a console (with your activated virtual env) and go to the Hyppopy root folder
 3. ```$ pip install -r requirements.txt```
 4. ```$ python setup.py install``` (for normal usage) or ```$ python setup.py develop``` (if you want to join the hyppopy development *hooray*)
+5. To run the [minimal-dataset example](https://github.com/FLAPS-NMI/FLAPS-sim_setups) for FLAPS optimization of biomolecular simulation parameters, manually install the [PyRosetta](http://www.pyrosetta.org) python package. PyRosetta is an interactive Python-based interface to the powerful Rosetta molecular modeling suite. It enables users to design their own custom molecular modeling algorithms using Rosetta sampling methods and energy functions.
 
 
 ## How to use Hyppopy?
 
-#### The Hyperparamaterspace
+#### The Hyperparamater Space
 
-Hyppopy defines a common hyperparameterspace description, whatever solver is used. A hyperparameter description includes the following fields:
+Hyppopy defines a common hyperparameter space description, whatever solver is used. A hyperparameter description includes the following fields:
 
 * domain: the domain defines how the solver samples the parameter space, options are:
-	* uniform: samples the data range [a,b] evenly, whereas b>a
-	* normal: samples the data range [a,b] using a normal distribution with mu=a+(b-a)/2, sigma=(b-a)/6, whereas b>a
-	* loguniform: samples the data range [a,b] logarithmic using e^x by sampling the exponent range x=[log(a), log(b)] uniformly, whereas a>0 and b>a
+	* uniform: samples the data range [a,b] evenly, where b>a
+	* normal: samples the data range [a,b] using a normal distribution with mu=a+(b-a)/2, sigma=(b-a)/6, where b>a
+	* loguniform: samples the data range [a,b] logarithmic using e^x by sampling the exponent range x=[log(a), log(b)] uniformly, where a>0 and b>a
 	* categorical: is used to define a data list
-* data: in case of categorical domain data is a list, all other domains expect a range [a, b]
+* data: in case of categorical domain, data is a list, all other domains expect a range [a, b]
 * type: the parameter data type as string 'int', 'float' or 'str'
 
-An exeption must be kept in mind when using the GridsearchSolver. The gridsearch additionally needs a number of samples per domain, which must be set using the field: frequency.
+An exception must be kept in mind when using the grid-search solver. Grid search additionally needs a number of samples per domain, which must be set using the field 'frequency'.
 
 #### The HyppopyProject class
 
-The HyppopyProject class takes care all settings necessary for the solver and your workflow. To setup a HyppopyProject instance we can use a nested dictionary or the classes memberfunctions respectively.
+The HyppopyProject class takes care all settings necessary for the solver and your workflow. To setup a HyppopyProject instance we can use a nested dictionary or the class' member functions, respectively.
 
 ```python
 # Import the HyppopyProject class
@@ -118,7 +119,7 @@ print("anything_you_want:", project.anything_you_want)
 
 #### The HyppopySolver classes
 
-Each solver is a child of the HyppopySolver class. This is only interesting if you're planning to write a new solver, we will discuss this in the section Solver Development. All solvers we can use to optimize our blackbox function are part of the module 'hyppopy.solver'. Below is a list of all solvers available along with their access key in squared brackets.
+Each solver is a child of the HyppopySolver class. This is only interesting if you're planning to write a new solver, we will discuss this in the section 'Solver Development'. All solvers we can use to optimize our blackbox function are part of the module 'hyppopy.solver'. Below is a list of all solvers available along with their access key in squared brackets.
 
 * HyperoptSolver [hyperopt]
     _Bayes Optimization use Tree-Parzen Estimator, supports uniform, normal, loguniform and categorical parameter_
@@ -168,7 +169,7 @@ print("Best Parameter Set:\n{}".format(best))
 print("*"*100)
 ```
 
-The SolverPool is a class keeping track of all solver classes. We have several options to ask the SolverPool for the desired solver. We can add a setting called solver to our config or to the project instance respectively, or we can use the solver access key (see solver listing above) to ask for the solver directly.
+The SolverPool is a class keeping track of all solver classes. We have several options to ask the SolverPool for the desired solver. We can add a setting called 'solver' to our config or to the project instance, respectively, or we can use the solver access key (see solver listing above) to ask for the solver directly.
 
 ```python
 # import the SolverPool class
@@ -208,7 +209,7 @@ print("*"*100)
 ```
 
 #### The BlackboxFunction class
-To extend the possibilities beyond using parameter only loss functions as in the examples above, we can use the BlackboxFunction class. This class is a wrapper class around the actual loss_function providing a more advanced access interface to data handling and a callback_function for accessing the solvers iteration loop.
+To extend the possibilities beyond using parameter-only loss functions as in the examples above, we can use the BlackboxFunction class. This class is a wrapper class around the actual loss_function providing a more advanced access interface to data handling and a callback_function for accessing the solver's iteration loop.
 ```python
 # import the HyppopyProject class keeping track of inputs
 from hyppopy.HyppopyProject import HyppopyProject
@@ -326,7 +327,7 @@ Each hyperparameter needs a range and a domain specifier. The range, specified v
 
 *<span style="color:red">Not all domains are supported by all solvers, this might be fixed in the future, but until, the solver throws an error telling you that the domain is unknown.</span>
 
-When using the GridsearchSolver we need to specifiy an interval and a number of samples using a frequency specifier. The max_iterations parameter is obsolet in this case, because each axis specifies an individual number of samples via frequency. This applies only to numerical space domains, categorical space domains need a frequency value of 1.
+When using the GridsearchSolver we need to specifiy an interval and a number of samples using a frequency specifier. The max_iterations parameter is obsolete in this case, because each axis specifies an individual number of samples via frequency. This applies only to numerical space domains, categorical space domains need a frequency value of 1.
 
 ```python
 # import the SolverPool class
@@ -378,7 +379,3 @@ solver.run()
 ```
 
 You can also change the port and the server name in start_viewer(port=8097, server="http://localhost")
-
-## Acknowledgements:
-_This work is supported by the [Helmholtz Association Initiative and Networking](https://www.helmholtz.de/en/about_us/the_association/initiating_and_networking/) Fund under project number ZT-I-0003._
-<br>
