@@ -1,0 +1,29 @@
+{"hyperparameter": {
+    "C": { 
+        "domain": "uniform",
+        "data": "[0,20]",
+        "type": "float"
+    },
+    "gamma": {
+        "domain": "uniform",
+        "data": "[0.0001,20.0]",
+        "type": "float"
+    },
+	"kernel": {
+        "domain": "categorical",
+        "data": "[linear, poly, rbf]",
+        "type": "str"
+    }
+},
+"settings": {
+	"solver_plugin": {
+		"max_iterations": "3",
+		"use_plugin" : "hyperopt",
+		"output_dir": "D:/Projects/Python/hyppopy/hyppopy/tests/data/Titanic"
+	},
+	"custom": {
+		"data_path": "D:/Projects/Python/hyppopy/hyppopy/tests/data/Titanic",
+		"data_name": "train_cleaned.csv",
+		"labels_name": "Survived"
+	}
+}}

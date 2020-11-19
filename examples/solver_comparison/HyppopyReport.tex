@@ -1,0 +1,35 @@
+\title{Hyppopy Solver Comparison Report}
+\date{\today}
+
+\def \myiterI {15}
+\def \myiterII {50}
+\def \myiterIII {300}
+\def \myiterIV {1000}
+
+\documentclass[12pt]{article}
+\usepackage{geometry}
+ \geometry{
+ a4paper,
+ total={170mm,257mm},
+ left=20mm,
+ top=20mm,
+ }
+
+\usepackage{subcaption}
+\usepackage{graphicx}  
+\graphicspath{{./gfx/}}  
+\captionsetup[subfigure]{labelformat=empty}
+
+\begin{document}
+\maketitle
+\newpage
+
+\section{Benchmarking}
+
+\input{ReportPage_I.tex}
+\newpage
+\input{ReportPage_II.tex}
+\newpage
+\input{ReportPage_III.tex}
+
+\end{document}

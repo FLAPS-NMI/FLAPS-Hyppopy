@@ -1,0 +1,26 @@
+<hyppopy>
+	<hyperparameter>
+		<n_estimators>
+			<domain>uniform</domain>
+			<data>[1, 100]</data>
+			<type>int</type>
+		</n_estimators>
+		<learning_rate>
+			<domain>loguniform</domain>
+			<data>[0.0001,100]</data>
+			<type>float</type>
+		</learning_rate>
+	</hyperparameter>
+	<settings>
+		<solver_plugin>
+			<max_iterations>3</max_iterations>
+			<use_plugin>hyperopt</use_plugin>
+			<output_dir>D:/Projects/Python/hyppopy/hyppopy/tests/data/Titanic</output_dir>
+		</solver_plugin>
+		<custom>
+			<data_path>D:/Projects/Python/hyppopy/hyppopy/tests/data/Titanic</data_path>
+			<data_name>train_cleaned.csv</data_name>
+			<labels_name>Survived</labels_name>
+		</custom>
+	</settings>
+</hyppopy>

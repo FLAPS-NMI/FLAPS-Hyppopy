@@ -1,0 +1,28 @@
+<hyppopy>
+	<hyperparameter>
+		<C>
+			<domain>uniform</domain>
+			<data>[0,20]</data>
+			<type>float</type>
+		</C>
+		<gamma>
+			<domain>uniform</domain>
+			<data>[0.0001,20.0]</data>
+			<type>float</type>
+		</gamma>
+		<kernel>
+			<domain>categorical</domain>
+			<data>[linear,sigmoid,poly,rbf]</data>
+			<type>str</type>
+		</kernel>
+	</hyperparameter>
+	<settings>
+		<solver_plugin>
+			<max_iterations>50</max_iterations>
+			<use_plugin>optunity</use_plugin>
+		</solver_plugin>
+		<custom>
+			<data_path>C:/path/to/my/data</data_path>
+		</custom>
+	</settings>
+</hyppopy>

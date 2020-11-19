@@ -1,0 +1,111 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# latex
+*.aux
+*.bbl
+*.blg
+*.log
+*.tcp
+
+# solver_comparison
+examples/solver_comparison/gfx/data_I
+examples/solver_comparison/gfx/data_II
+examples/solver_comparison/gfx/data_III
+
+*.vpp.lck
+
+.pytest_cache/
+*.vpp.bak_*
+python_tests_xml
+doc/CHANGELOG.md
+
+# C extensions
+*.so
+
+# Distribution / packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+.idea/
+
+# PyInstaller
+#  Usually these files are written by a python script from a template
+#  before PyInstaller builds the exe, so as to inject date/other infos into it.
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+
+# Sphinx documentation
+doc/_build/
+doc/LICENSE.rst
+doc/README.md
+
+
+# PyBuilder
+target/
+
+#Ipython Notebook
+.ipynb_checkpoints
+
+#Pycharm files
+*.iml
+
+# merging stuff
+*.orig
+*~
+
+# Paths in repository
+mcml.py
+
+# images etc
+*.tif
+*.nrrd
+*.caffemodel
+
+# C++ stuff
+build*
+*.user
+hyppopy/tests/test_snipped_000.py
+hyppopy/tests/test_snipped_001.py
+hyppopy/tests/test_snipped_002.py
+hyppopy/tests/test_snipped_003.py
+hyppopy/tests/test_snipped_004.py
+hyppopy/tests/test_snipped_005.py
+hyppopy/tests/test_snipped_006.py
