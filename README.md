@@ -21,11 +21,17 @@ Hyppopy is a python toolbox for blackbox optimization. It offers a unified and e
 
 ## Installation
 
+Hyppopy is a python 3.6 package. Thus, it can in principle be installed on any operating system supporting python 3.6. It has been tested on Linux Ubuntu 18.04 LTS and Red Hat Enterprise Linux 7.7. Its dependencies can be found in the provided requirements text file. Non-standard hardware is not required.
+
 1. Clone the [Hyppopy](http:\\github.com) project from Github.
 2. (Create a virtual environment), open a console (with your activated virtual env) and go to the Hyppopy root folder
 3. ```$ pip install -r requirements.txt```
 4. ```$ python setup.py install``` (for normal usage) or ```$ python setup.py develop``` (if you want to join the hyppopy development *hooray*)
-5. To run the [minimal-dataset example](https://github.com/FLAPS-NMI/FLAPS-sim_setups) for FLAPS optimization of biomolecular simulation parameters, manually install the [PyRosetta](http://www.pyrosetta.org) python package. PyRosetta is an interactive Python-based interface to the powerful Rosetta molecular modeling suite. It enables users to design their own custom molecular modeling algorithms using Rosetta sampling methods and energy functions.
+
+Completing the installation normally takes only a couple of minutes.
+
+Note: A scalable application example providing the minimal dataset to quantitatively replicate the results of the work 'FLAPS: Dynamic particle swarm optimization of biomolecular simulation parameters with flexible objective functions' submitted to NMI is provided on [Github](https://github.com/FLAPS-NMI/FLAPS-sim_setups), along with instructions how to run the code. The expected output is described in the paper's results section in detail.  
+Note that to run the [minimal-dataset example](https://github.com/FLAPS-NMI/FLAPS-sim_setups) for FLAPS optimization of biomolecular simulation parameters, you have to manually install the [PyRosetta](http://www.pyrosetta.org) python package. PyRosetta is an interactive Python-based interface to the powerful Rosetta molecular modeling suite. It enables users to design their own custom molecular modeling algorithms using Rosetta sampling methods and energy functions. In addition, this appliaction example requires a working MPI installation, e.g., OpenMPI 4.0.
 
 
 ## How to use Hyppopy?
